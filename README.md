@@ -10,6 +10,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Used `ng generate component component-name` to generate a new component and 'ng generate service service-name' to generate service.
 
-ReactiveForms Module is used
+ReactiveForms Module is used and
 ngFor is used to make dynamic web page
 
