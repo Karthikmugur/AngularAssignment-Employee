@@ -1,0 +1,92 @@
+header{
+    text-align: center;
+    font-size: 30px;
+    background-color: cyan;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.Container{
+    text-align: center;
+}
+.buttons{
+    border-radius: 40px;
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    background-color: blue;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.buttonsave{
+    border-radius: 30px;
+    padding: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    font-size: 17px;
+    background-color: blue;
+    color: white;
+    margin-top: 10px;
+}
+
+.modal-body{
+    width: 100%;
+    background-color: lightgray;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.title {
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: brown;
+    font-style: bold;
+    font-weight: bolder;
+    text-align: center;
+    justify-content: center;
+}
+
+.closebtn{
+    background-color: white;
+    font-size: 12px;
+}
+.Content{
+    margin-bottom: 5px;
+    text-align: left;
+}
+.Save{
+    color: white;
+    border-radius: 14px;
+    background-color: black;
+    align-items: center;
+    width: 40%;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.TableElement{
+    width: 70%;
+    margin: auto;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table td, .table th{
+    padding:12px 15px;
+    border:1px solid black;
+    text-align: center;
+}
+.table th{
+    background-color: lightgrey;
+
+}
+.table tbody{
+    background-color: white;
+    color: black;
+}

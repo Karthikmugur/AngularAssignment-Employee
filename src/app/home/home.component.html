@@ -1,0 +1,92 @@
+<header>Angular Assignment</header>
+
+<div class="Container">
+    <button type="button" class="btn btn-primary buttons" data-bs-toggle="modal" data-bs-target="#addEmpModal"
+        data-bs-whatever="@mdo"><i class="bi bi-file-plus"></i> Add Employee</button>
+
+    <!-- ADD EMPLOYEE -->
+    <div class="modal fade FormBody" id="addEmpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 title" id="exampleModalLabel">Add Employee Details</h1>
+              <button type="button" class="btn-close closebtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="employeeForm">
+                <div class="mb-3" style="text-align: left; font-weight: 500;">
+                  <label for="recipient-name" class="col-form-label">Employee Name:</label>
+                  <input type="text" class="form-control" id="recipient-name" formControlName="name">
+                </div>
+                <div class="mb-3" style="text-align: left; font-weight: 500;">
+                    <label for="recipient-email" class="col-form-label">Employee Email:</label>
+                    <input type="text" class="form-control" id="recipient-email" formControlName="email">
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+              <button type="button" class="btn btn-primary buttonsave" (click)="addEmployee()"
+              [disabled]="employeeForm.invalid">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- EDIT EMPLOYEE -->
+    <div class="modal fade FormBody" id="editEmpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 title" id="exampleModalLabel">Edit Employee Details</h1>
+              <button type="button" class="btn-close closebtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="editForm">
+                <div class="mb-3" style="text-align: left; font-weight: 900;">
+                  <label for="recipient-name" class="col-form-label">Employee Name:</label>
+                  <input type="text" class="form-control" id="recipient-name" formControlName="editname"
+                  [value]="employeeDetails?.empName">
+                </div>
+                <div class="mb-3" style="text-align: left;  font-weight: 900;">
+                    <label for="recipient-email" class="col-form-label">Employee Email:</label>
+                    <input type="text" class="form-control" id="recipient-email" formControlName="editemail"
+                    [value]="employeeDetails?.empEmail">
+                  </div>
+              </form>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+              <button type="button" class="btn btn-primary buttonsave" (click)="updateEmployee
+              (employeesData)">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="TableElement">
+        <table class="table">
+          <thead>
+            <tr>
+                <th>EMP_ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of employeesData; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{employee.empName}}</td>
+                <td>{{employee.empEmail}}</td>
+                <td>
+                        <span class="mx-1">
+                            <i class="bi bi-pen" data-bs-toggle="modal" data-bs-target="#editEmpModal"
+                            (click)="getAllDetails(employee)"></i>
+                        </span>
+                        <span class="mx-1">
+                            <i class="bi bi-trash" (click)="deleteEmployee(employee)"></i>
+                        </span>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
